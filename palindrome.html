@@ -1,0 +1,27 @@
+<html>  
+<body>
+  <script>
+  function palindrome(myString){
+
+/* remove special characters, spaces and make lowercase*/
+var removeChar = myString.replace(/[^A-Z0-9]/ig, "").toLowerCase();
+// document.write(removeChar +"<br>");
+
+/* reverse removeChar for comparison*/
+var checkPalindrome = removeChar.split('').reverse().join('');
+// document.write(checkPalindrome +"<br>");
+
+/* Check to see if myString is a Palindrome*/
+if(removeChar === checkPalindrome){
+  
+  alert(myString + " is a Palindrome");
+}else{
+  
+  alert(myString + " is not a Palindrome");
+}
+}
+var a = prompt("enter any text/ string/ no");
+palindrome(a)
+</script>
+</body>
+</html>  
