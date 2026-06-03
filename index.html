@@ -1,17 +1,69 @@
-<html>
-  <body>
-    <script>
-      function palindrome(myString){
-        var removeChar = myString.replace(/[^A-Z0-9]/ig, "").toLowerCase();
-        var checkPalindrome = removeChar.split('').reverse().join('');
-        if(removeChar === checkPalindrome){
-          alert(myString + " is a Palindrome");
-        } else{
-          alert(myString + " is not a Palindrome");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
         }
-      }
-      var a = prompt("enter any text/ string/ no");
-      palindrome(a)
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function isPalindrome(inputString) {
+            const cleanedString = inputString
+                .replace(/[^a-z0-9]/gi, "")
+                .toLowerCase();
+
+            const reversedString = cleanedString
+                .split("")
+                .reverse()
+                .join("");
+
+            return cleanedString === reversedString;
+        }
+
+        function startChecking() {
+            while (true) {
+                const userInput = prompt(
+                    "Enter text, string, or number (Click Cancel to exit):"
+                );
+
+                // Exit when Cancel is clicked
+                if (userInput === null) {
+                    alert("Program paused. Click the 'Check Again' button to restart.");
+                    break;
+                }
+
+                if (userInput.trim() === "") {
+                    alert("Please enter a valid value.");
+                    continue;
+                }
+
+                if (isPalindrome(userInput)) {
+                    alert(`"${userInput}" is a Palindrome.`);
+                } else {
+                    alert(`"${userInput}" is NOT a Palindrome.`);
+                }
+            }
+        }
+
+        // Start the checking loop immediately
+        startChecking();
     </script>
-  </body>
+
+    <!-- Button to restart the process if Cancel was clicked -->
+    <button onclick="location.reload()">Check Again / New Search</button>
+</body>
 </html>
