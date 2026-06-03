@@ -1,0 +1,7 @@
+Palindrome Checker is a lightweight, browser-based string validation tool built entirely with vanilla HTML, CSS, and JavaScript — no frameworks, no libraries, zero dependencies.
+The app prompts the user to enter any word, sentence, phrase, or number and instantly determines whether it is a palindrome — a sequence that reads the same forwards and backwards. Before checking, the input is intelligently cleaned using a regular expression that strips all punctuation, special characters, and spaces, and converts everything to lowercase. This means classic palindromes like "A man, a plan, a canal: Panama" or "Was it a car or a cat I saw?" are correctly identified — not just simple ones like "racecar" or "12321".
+Under the hood, the logic uses core JavaScript string and array methods: .replace() with a regex pattern to sanitize input, .toLowerCase() for case normalization, .split("") to convert the string into a character array, .reverse() to flip it, and .join("") to reconstruct it — then a strict equality check === to confirm the match.
+The app runs in a continuous loop, allowing users to check multiple inputs back-to-back without reloading. If the user cancels, a "Check Again" button is available to restart the session instantly. The entire project is a clean demonstration of algorithmic thinking, string manipulation, regex usage, and DOM interaction using pure JavaScript fundamentals.
+
+Tech Stack: HTML5 · CSS3 · Vanilla JavaScript
+Key Concepts: String manipulation · Regular expressions · Array methods · Loop control flow · DOM events
